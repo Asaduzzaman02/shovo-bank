@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asad-bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div id="login-page"  class="login-aria">
+        <h1 class="welcome-heding">Welcome to Rahat Bank </h1>
+        <div class="login-box container">
+            <h4>Login</h4>
+            <input  class="form-control" placeholder="Enter your email" > <br>
+            <input  class="form-control" placeholder="Password" >
+            <br>
+            <button id="login-button" class="btn btn-success" >Enter</button>
+        </div>
+    </div>
+    <div id="secnd-page" class="scend-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="deposit bg-style">
+                        <h5>Deposit</h5>
+                        <h4> $ <samp id="deposit-view" >00</samp></h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="withdraw bg-style">
+                        <h5>Withdraw</h5>
+                        <h4> $ <samp id="withdraw-view" >00</samp></h4>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="balance bg-style">
+                        <h5>Balance</h5>
+                        <h4> $ <samp id="balance-add" >1200</samp></h4>
+                    </div>
+
+                </div>
+            </div> <br> <br>
+            <div class="row">
+                <div class="col-md-6">
+                   <div class="box-style">
+                    <h4>Deposit</h4>
+                    <input id="deposit-amount" type="text" class="form-control" placeholder="$ amount you want to deposit"> <br>
+                    <button id="deposit-button" class="btn btn-success">Deposit</button>
+
+                   </div> 
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="box-style">
+                        <h4>withdraw</h4>
+                    <input id="withdraw-amount" type="text" class="form-control" placeholder="$ amount you want to withdraw"> <br>
+                    <button id="withdraw-button" class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script>
+    //  view scend page
+    const loginButton =document.getElementById("login-button");
+        loginButton.addEventListener("click",function(){
+
+    document.getElementById("login-page").style.display = "none";
+
+    const scendPage = document.getElementById("secnd-page");
+        scendPage.style.display="block";
+           })
+    // Deposit add
+        const DepositButton = document.getElementById("deposit-button");
+        DepositButton.addEventListener("click",function(){
+        const  depositAmount = document.getElementById("deposit-amount").value;
+        const  addDeposit = parseFloat(depositAmount);
+        const depositView =document.getElementById("deposit-view").innerText;
+        const depositAdd = parseFloat(depositView);
+        const totalDeposit = addDeposit+depositAdd;
+        document.getElementById("deposit-view").innerText=totalDeposit;
+        // total deposit
+        const balanceAdd =document.getElementById("balance-add").innerText;
+        const totalBalance = parseFloat(balanceAdd);
+
+            const updateBalance = addDeposit+totalBalance;
+
+            document.getElementById("balance-add").innerText=updateBalance;
+
+
+        document.getElementById("deposit-amount").value="";
+        })
+        // withdraw amount 
+        const withdrawButton = document.getElementById("withdraw-button");
+        withdrawButton.addEventListener("click",function(){
+        const  withdrawAmount = document.getElementById("withdraw-amount").value;
+        const  addWithdraw = parseFloat(withdrawAmount);
+        const withdrawView =document.getElementById("withdraw-view").innerText;
+        const withdrawAdd = parseFloat(withdrawView);
+
+        const withdrawAmountAdd = addWithdraw+withdrawAdd;
+
+        document.getElementById("withdraw-view").innerText=withdrawAmountAdd;
+
+        document.getElementById("withdraw-amount").value="";
+        // total withdraw
+        const balanceAdd =document.getElementById("balance-add").innerText;
+        const totalBalance = parseFloat(balanceAdd);
+        const totalWithdraw = totalBalance-addWithdraw;
+        document.getElementById("balance-add").innerText=totalWithdraw;
+        })
+
+</script>
+    
+
+</body>

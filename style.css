@@ -1,0 +1,37 @@
+.welcome-heding{
+    text-align: center;
+    padding: 50px;
+ }
+ .login-aria{
+    margin-top: 150px;
+ }
+ .login-box{
+    box-shadow: 5px 5px 10px gray;
+    padding: 30px;
+    border-radius: 10px;
+ }
+ .scend-page{
+    display: none;
+    margin-top: 200px;
+    
+ }
+ .deposit{
+    background-color: slateblue;
+ }
+ .withdraw{
+    background-color: lightsalmon;
+ }
+ .balance{
+    background-color: orange;
+ }
+ .bg-style{
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+ }
+ .box-style{
+    padding: 40px;
+    box-shadow: 5px 5px 10px;
+    border-radius: 10px;
+ }
+ 
